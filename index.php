@@ -79,7 +79,7 @@
 		  //fin animation segment
 		  function segmentEnd (segmentAnimation) {
 		    var $point = $('#'+segmentAnimation.getAttribute('point_id'));
-			$point.attr('fill',segmentEndColor);
+			//$point.attr('fill',segmentEndColor);
 		    
 		    $.growl.startligne({message: "Arrivée arrêt " + segmentAnimation.getAttribute('station_stop')},segmentAnimation.getAttribute('ligne_id'));
 		    
@@ -93,7 +93,7 @@
 			  $('#next_station_' + id_ligne).html(segmentAnimation.getAttribute('station_stop'));
 				
 			  var color = $('#a_segment1_'+ id_ligne).attr('point_color');
-			  $point.attr('fill',color);
+			  //$point.attr('fill',color);
 				
 				
 			  $.growl.startligne({ message: "Départ direction " + segmentAnimation.getAttribute('station_stop')},segmentAnimation.getAttribute('ligne_id'));
