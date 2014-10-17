@@ -98,6 +98,10 @@
 				
 			  $.growl.startligne({ message: "Départ direction " + segmentAnimation.getAttribute('station_stop')},segmentAnimation.getAttribute('ligne_id'));
 		  }
+		  
+		  function busStationOver () {
+			$(document).tooltip();
+		  }
 	</script>
 </head>
 
@@ -159,7 +163,7 @@
 <?php
 	$stations = $entities->getStations();
 	foreach($stations as $station){
-	  echo '<use id="'.$station->getId().'" y="'.$station->getPosY().'" x="'.$station->getPosX().'" xlink:href="#bus_stop"/>';
+	  echo '<use id="'.$station->getId().'" y="'.$station->getPosY().'" x="'.$station->getPosX().'" xlink:href="#bus_stop" onmouseover="busStationOver()" title="'.$station->getNom().'"/>';
 	}
 ?>
 
